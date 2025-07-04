@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - LuqTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        #mobileMenu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header avec logo et menu -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">L</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">Luqtech</span>
+                </div>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
+                        Accueil
+                    </a>
+                    <a href="aproLuq.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
+                        À propos
+                    </a>
+                    <a href="services3.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
+                        Services
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="menuButton">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 py-4 border-t border-gray-200/50 hidden bg-white/80 backdrop-blur-lg" id="mobileMenu">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Accueil
+                    </a>
+                    <a href="aproLuq.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        À propos
+                    </a>
+                    <a href="services3.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Services
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Contact
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Hero avec image avant texte -->
+    <section id="home" class="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image en premier -->
+                <div class="lg:order-1">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <img
+                            src="images/stouba.jpg"
+                            alt="Professionnel IT au travail"
+                            class="w-full h-64 object-cover rounded-lg mb-6"
+                        />
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Solutions IT complètes</h3>
+                            <p class="text-gray-600">
+                                De la conception à la maintenance, nous accompagnons votre transformation digitale.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texte après image -->
+                <div class="lg:order-2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Bienvenue Chez LuqTech, votre
+                        <span class="block text-blue-600">de confiance</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                        Développement web, digitalisation, réseau et maintenance informatique.
+                        Solutions sur mesure pour votre entreprise.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center group">
+                            Demander un devis
+                            <i data-lucide="arrow-right" class="ml-2 group-hover:translate-x-1 transition-transform w-5 h-5"></i>
+                        </a>
+                        <a href="Services.html" class="border-2 border-blue-600 text-blue-600 px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200 text-center">
+                            Découvrir nos services
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 md:gap-6">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Intervention rapide</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Devis gratuit</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Support 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        
+        // Toggle mobile menu
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuButton.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuButton.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        });
+    </script>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">L</span>
+                        </div>
+                        <span class="text-2xl font-bold">Luqtech</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Votre partenaire de confiance pour tous vos besoins informatiques. 
+                        Solutions sur mesure et expertise technique depuis 2016.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Développement Web
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Applications Mobile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Digitalisation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Réseau & Infrastructure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Maintenance PC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Bases de données
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#about" class="text-gray-300 hover:text-white transition-colors">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors">
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">
+                                Réalisations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#blog" class="text-gray-300 hover:text-white transition-colors">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Devis gratuit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">01 23 45 67 89</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">contact@luqtech.fr</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">Paris, Île-de-France</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-semibold mb-2">Urgence 24/7</h4>
+                        <p class="text-blue-400 font-semibold">06 12 34 56 78</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2024 Luqtech. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Mentions légales
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Politique de confidentialité
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            CGV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
