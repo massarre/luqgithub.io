@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - LuqTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .earth-bg {
+            background-color: #f8f5f2;
+        }
+        .contact-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .form-input {
+            border-bottom: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            padding-left: 0;
+            border-radius: 0;
+        }
+        .form-input:focus {
+            border-bottom-color: #3b82f6;
+            box-shadow: none;
+            outline: none;
+        }
+        .map-container {
+            height: 100%;
+            min-height: 300px;
+        }
+        .btn-primary {
+            background: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        .hero-banner {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .success-message {
+            display: none;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="earth-bg">
+    <!-- Hero Banner avec image informatique -->
+    <div class="hero-banner" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+        <div class="hero-overlay h-full w-full flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Contactez-nous</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+                    Discutons de votre projet numérique avec notre équipe d'experts
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl p-8 lg:p-12 contact-card">
+                    <h3 class="text-2xl font-medium text-gray-900 mb-8">Envoyez-nous un message</h3>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="success-message" class="success-message">
+                        <strong class="font-bold">Message envoyé !</strong>
+                        <span class="block sm:inline">Nous vous répondrons dans les plus brefs délais.</span>
+                    </div>
+                    
+                    <form 
+                        id="contact-form"
+                        action="https://formsubmit.co/massambasarr702@gmail.com" 
+                        method="POST"
+                        class="space-y-8"
+                    >
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nom complet *</label>
+                                <input type="text" name="name" required class="w-full py-3 form-input">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                <input type="email" name="email" required class="w-full py-3 form-input">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                                <input type="tel" name="phone" class="w-full py-3 form-input">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Entreprise</label>
+                                <input type="text" name="company" class="w-full py-3 form-input">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea name="message" rows="5" required class="w-full py-3 form-input"></textarea>
+                        </div>
+
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        <input type="hidden" name="_subject" value="Nouveau message depuis le formulaire de contact">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="btn-primary text-white px-8 py-4 rounded-lg font-medium">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info + Map -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl p-8 lg:p-12 contact-card">
+                        <h3 class="text-2xl font-medium text-gray-900 mb-8">Nos coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Adresse</h4>
+                                    <p class="text-gray-600">123 Rue de la Technologie</p>
+                                    <p class="text-gray-600">75015 Paris, France</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Email</h4>
+                                    <p class="text-gray-600">massambasarr702@gmail.com</p>
+                                    <p class="text-sm text-gray-500">Réponse sous 24h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Téléphone</h4>
+                                    <p class="text-gray-600">01 23 45 67 89</p>
+                                    <p class="text-sm text-gray-500">Lun-Ven 9h-18h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div class="bg-white rounded-xl overflow-hidden contact-card">
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.99144060821!2d2.292292615509614!3d48.85837360866186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1623251234567!5m2!1sfr!2sfr" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-medium text-gray-900 mb-2">Notre bureau</h3>
+                            <p class="text-gray-600">Retrouvez-nous dans notre espace de travail moderne au cœur de Paris.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const successMessage = document.getElementById('success-message');
+            
+            // Change button state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Envoi en cours...';
+            
+            // Send form data
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Reset form fields
+                    form.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Erreur réseau');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Une erreur s'est produite. Veuillez réessayer.");
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Envoyer le message';
+            });
+        });
+    </script>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">L</span>
+                        </div>
+                        <span class="text-2xl font-bold">Luqtech</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Votre partenaire de confiance pour tous vos besoins informatiques. 
+                        Solutions sur mesure et expertise technique depuis 2016.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                        >
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Développement Web
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Applications Mobile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Digitalisation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Réseau & Infrastructure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Maintenance PC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Bases de données
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#about" class="text-gray-300 hover:text-white transition-colors">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors">
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">
+                                Réalisations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#blog" class="text-gray-300 hover:text-white transition-colors">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                Devis gratuit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">01 23 45 67 </span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">massambasarr702@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
+                            <span class="text-gray-300">Valenciennes 59300</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                        <p class="text-blue-400 font-semibold">06 62 48 377 79</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2024 Luqtech. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Mentions légales
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Politique de confidentialité
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            CGV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
