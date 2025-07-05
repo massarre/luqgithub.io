@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-image-container {
+            flex: 0 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .service-image {
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+        .service-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .service-text {
+            flex: 1;
+        }
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            padding: 30px 20px 20px;
+            color: white;
+        }
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .service-title:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        .service-card:hover .service-title:after {
+            width: 60px;
+        }
+        .learn-more {
+            margin-top: auto;
+            padding-top: 15px;
+        }
+        .service-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: #f8fafc;
+            margin: 0 -20px -20px;
+            padding: 0 20px;
+        }
+        .service-details.active {
+            max-height: 1000px;
+            padding: 20px;
+            transition: max-height 0.8s ease-in;
+        }
+        .tech-badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .feature-icon {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-light text-gray-800 mb-4">Nos Services Experts</h2>
+                <div class="w-20 h-0.5 bg-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 - Agent AI et Réceptionniste IA -->
+                <div class="service-card rounded-lg shadow-md bg-white">
+                    <div class="service-image-container">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Agent AI et Réceptionniste IA" 
+                             class="service-image">
+                        <div class="service-overlay">
+                            <h3 class="service-title font-medium">Agent AI et Réceptionniste IA</h3>
+                            <p class="text-sm opacity-90">Assistant virtuel pour vos appels entrants</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-text">
+                            <p class="text-gray-600 mb-4">Automatisation de vos processus pour améliorer votre productivité et efficacité.</p>
+                        </div>
+                        <div class="learn-more">
+                            <button onclick="toggleDetails('ai-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                                En savoir plus
+                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="ai-chevron"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="ai-details" class="service-details">
+                        <h4 class="font-bold text-gray-800 mb-3">Notre solution d'assistant vocal IA</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="feature-item">
+                                <i data-lucide="phone-call" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Réceptionniste virtuelle 24/7</strong> : Gestion intelligente des appels entrants avec transfert vers le bon service</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="message-square" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Conversations naturelles</strong> : Reconnaissance vocale avancée avec compréhension du contexte</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="filter" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Filtrage intelligent</strong> : Détection des appels importants et filtrage des spams</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="calendar" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Prise de rendez-vous</strong> : Intégration avec votre agenda électronique</span>
+                            </li>
+                        </ul>
+                        
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+                            <h4 class="font-bold text-blue-800 mb-2">Avantages clés</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i>
+                                    <span>Disponibilité 24h/24 et 7j/7</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i>
+                                    <span>Personnalisation complète de la voix et des réponses</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Service 2 - Réseau & Infrastructure -->
+                <div class="service-card rounded-lg shadow-md bg-white">
+                    <div class="service-image-container">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Réseau & Infrastructure" 
+                             class="service-image">
+                        <div class="service-overlay">
+                            <h3 class="service-title font-medium">Réseau & Infrastructure</h3>
+                            <p class="text-sm opacity-90">Conception, installation et maintenance</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-text">
+                            <p class="text-gray-600 mb-4">Solutions complètes pour votre infrastructure IT avec une disponibilité garantie.</p>
+        
+                        </div>
+                        <div class="learn-more">
+                            <button onclick="toggleDetails('infra-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                                En savoir plus
+                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="infra-chevron"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="infra-details" class="service-details">
+                        <h4 class="font-bold text-gray-800 mb-3">Nos solutions réseau et infrastructure</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="feature-item">
+                                <i data-lucide="server" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Infrastructure sur mesure</strong> : Conception adaptée à votre activité et à votre croissance</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="shield" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Réseau sécurisé</strong> : Installation et configuration de switchs, routeurs, firewalls et protection contre les intrusions</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="cloud" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Installation et configuration de serveurs</strong> :  Déploiement et optimisation de serveurs Windows et Linux</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="monitor" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Surveillance 24/7</strong> : Détection proactive des problèmes</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="cloud" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Virtualisation</strong> : Solutions VMware, Hyper-V et Proxmox</span>
+                            </li>
+                        </ul>
+                        
+        
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- Service 3 - Maintenance et dépannage PC -->
+                <div class="service-card rounded-lg shadow-md bg-white">
+                    <div class="service-image-container">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Maintenance et dépannage PC" 
+                             class="service-image">
+                        <div class="service-overlay">
+                            <h3 class="service-title font-medium">Maintenance et dépannage PC (Paticulier)</h3>
+                            <p class="text-sm opacity-90">Service complet pour vos équipements</p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-text">
+                            <p class="text-gray-600 mb-4">Diagnostic, réparation.</p>
+                        </div>
+                        <div class="learn-more">
+                            <button onclick="toggleDetails('maintenance-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                                En savoir plus
+                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="maintenance-chevron"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="maintenance-details" class="service-details">
+                        <h4 class="font-bold text-gray-800 mb-3">Nos services de maintenance</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="feature-item">
+                                <i data-lucide="settings" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Maintenance préventive</strong> : Nettoyage, vérification et optimisation régulière</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="alert-triangle" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Dépannage technique</strong> : Résolution des problèmes réseau et connectivité, diagnostic hardware, réparation écrans</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="hard-drive" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Optimisation logicielle et matérielle</strong> : Installation et configuration de matériel et d'OS</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="refresh-cw" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Mises à jour logicielles</strong> : Systèmes d'exploitation et applications</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 - Développement Web -->
+                <div class="service-card rounded-lg shadow-md bg-white">
+                    <div class="service-image-container">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Développement Web" 
+                             class="service-image">
+                        <div class="service-overlay">
+                            <h3 class="service-title font-medium">Développement Web et digitalisation</h3>
+                            <p class="text-sm opacity-90">Sites vitrines </p>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-text">
+                            <p class="text-gray-600 mb-4">Nous créons des solutions web modernes et performantes adaptées à vos besoins.</p>
+                        </div>
+                        <div class="learn-more">
+                            <button onclick="toggleDetails('web-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                                En savoir plus
+                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="web-chevron"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="web-details" class="service-details">
+                        <h4 class="font-bold text-gray-800 mb-3">Nos solutions web</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="feature-item">
+                                <i data-lucide="globe" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Sites vitrines premium</strong> : Design responsive, SEO optimisé, intégration CMS</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="shopping-cart" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Boutiques en ligne</strong> : Paiements sécurisés, gestion de stocks, expérience client</span>
+                            </li>
+                            <li class="feature-item">
+                                <i data-lucide="users" class="feature-icon w-5 h-5 text-blue-500"></i>
+                                <span><strong>Digitalisation menu Restaurant</strong> : Menu consultable à partir d'un code QR</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white">
+        <!-- ... (footer inchangé) ... -->
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        function toggleDetails(detailsId) {
+            const details = document.getElementById(detailsId);
+            const chevron = document.getElementById(detailsId.replace('-details', '-chevron'));
+            
+            details.classList.toggle('active');
+            
+            if (details.classList.contains('active')) {
+                chevron.setAttribute('name', 'chevron-up');
+            } else {
+                chevron.setAttribute('name', 'chevron-down');
+            }
+        }
+    </script>
+</body>
+</html>
