@@ -141,7 +141,21 @@
         font-size: 1rem;
     }
     }
-
+<!--footer1-->
+.footer-link:hover {
+            transform: translateX(5px);
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
     </style>
 </head>
 <body>
@@ -494,118 +508,95 @@
     </script>
     
 
-    <footer class="bg-gray-900 text-white">
+    <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div class="container mx-auto px-4 py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">L</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Company Info - Version améliorée -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center transform hover:rotate-12 transition-transform">
+                            <span class="text-white font-bold text-2xl">L</span>
                         </div>
-                        <span class="text-2xl font-bold">Luqtech</span>
+                        <span class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Luqtech</span>
                     </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Votre partenaire de confiance pour tous vos besoins informatiques. 
-                        Solutions sur mesure et expertise technique depuis 2016.
+                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                        Votre partenaire technologique pour des solutions digitales innovantes et performantes depuis 2016.
                     </p>
                     <div class="flex space-x-4">
-                        <a
-                            href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
-                        >
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="social-icon w-12 h-12 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
                         </a>
-                        <a
-                            href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
-                        >
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="#" class="social-icon w-12 h-12 bg-gray-700 hover:bg-blue-400 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
                         </a>
-                        <a
-                            href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
-                        >
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <a href="#" class="social-icon w-12 h-12 bg-gray-700 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
                         </a>
-                        <a
-                            href="#"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
-                        >
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="social-icon w-12 h-12 bg-gray-700 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Services -->
+                <!-- Services - Version améliorée -->
                 <div>
-                    <h3 class="text-xl font-bold mb-6">Services</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-blue-600 pb-2 inline-block">Nos Services</h3>
+                    <ul class="space-y-4">
                         <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Développement Web
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Développement Web et Digitalisation
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Applications Mobile
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Agent et Receptionniste IA 
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Réseau et Infrastructure 
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Digitalisation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Réseau & Infrastructure
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Maintenance PC
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Bases de données
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Maintenance et Dépannage PC
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Quick Links -->
+                <!-- Liens rapides - Version améliorée -->
                 <div>
-                    <h3 class="text-xl font-bold mb-6">Liens rapides</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-2xl font-bold mb-6 border-b border-blue-600 pb-2 inline-block">Navigation</h3>
+                    <ul class="space-y-4">
                         <li>
-                            <a href="#about" class="text-gray-300 hover:text-white transition-colors">
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="home" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="user" class="w-4 h-4 mr-2 text-blue-400"></i>
                                 À propos
                             </a>
                         </li>
                         <li>
-                            <a href="#services" class="text-gray-300 hover:text-white transition-colors">
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="settings" class="w-4 h-4 mr-2 text-blue-400"></i>
                                 Services
                             </a>
                         </li>
+        
                         <li>
-                            <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">
-                                Réalisations
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#blog" class="text-gray-300 hover:text-white transition-colors">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="text-gray-300 hover:text-white transition-colors">
+                            <a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 flex items-center">
+                                <i data-lucide="mail" class="w-4 h-4 mr-2 text-blue-400"></i>
                                 Contact
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                                Devis gratuit
                             </a>
                         </li>
                     </ul>
@@ -617,7 +608,7 @@
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
                             <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
-                            <span class="text-gray-300">01 23 45 67 89</span>
+                            <span class="text-gray-300">06 62 48 37 79</span>
                         </div>
                         <div class="flex items-center space-x-3">
                             <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
@@ -625,36 +616,45 @@
                         </div>
                         <div class="flex items-center space-x-3">
                             <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
-                            <span class="text-gray-300">Paris, Île-de-France</span>
+                            <span class="text-gray-300">Valenciennes, France</span>
                         </div>
                     </div>
-                    
-                    <div class="mt-6 p-4 bg-gray-800 rounded-lg">
-                        <h4 class="font-semibold mb-2">Urgence 24/7</h4>
-                        <p class="text-blue-400 font-semibold">06 12 34 56 78</p>
-                    </div>
                 </div>
-            </div>
 
-            <div class="border-t border-gray-800 mt-12 pt-8">
+            <!-- Section copyright améliorée -->
+            <div class="border-t border-gray-700 mt-16 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-300 text-sm">
-                        © 2024 Luqtech. Tous droits réservés.
-                    </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <i data-lucide="copyright" class="w-4 h-4 mr-2 text-gray-400"></i>
+                        <p class="text-gray-400">
+                            2024 Luqtech. Tous droits réservés.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-1"></i>
                             Mentions légales
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
-                            Politique de confidentialité
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                            <i data-lucide="shield" class="w-4 h-4 mr-1"></i>
+                            Confidentialité
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                            <i data-lucide="file" class="w-4 h-4 mr-1"></i>
                             CGV
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                            <i data-lucide="cookie" class="w-4 h-4 mr-1"></i>
+                            Préférences
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
