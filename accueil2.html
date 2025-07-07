@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuqTech - Solutions IT complètes pour votre entreprise. Développement web, digitalisation, réseau et maintenance informatique.">
+    <title>Accueil - LuqTech | Solutions Informatiques Professionnelles</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #mobileMenu {
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        header {
+            background-color: white !important;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .hero-image-container {
+            perspective: 1000px;
+        }
+        
+        .hero-image-card {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image-card:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateY(-5px);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header avec logo et menu -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center transition-transform hover:scale-105">
+                        <span class="text-white font-bold text-xl">L</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors">Luqtech</span>
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-blue-50/50">
+                        Accueil
+                    </a>
+                    <a href="aproN.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-blue-50/50">
+                        À propos
+                    </a>
+                    <a href="Services4.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-blue-50/50">
+                        Services
+                    </a>
+                    <a href="contact52.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-blue-50/50">
+                        Contact
+                    </a>
+                    <a href="contact.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                        Devis
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded" id="menuButton" aria-label="Menu" aria-expanded="false">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-3 py-3 border-t border-gray-200/50 hidden bg-white/95 backdrop-blur-lg" id="mobileMenu">
+                <nav class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Accueil
+                    </a>
+                    <a href="aproN.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        À propos
+                    </a>
+                    <a href="Services4.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Services
+                    </a>
+                    <a href="contact52.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2 px-4 rounded-lg hover:bg-blue-50/50">
+                        Contact
+                    </a>
+                    <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 text-center mt-2">
+                        Demander un devis
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Hero avec image avant texte -->
+    <section id="home" class="hero-section pt-36 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image en premier -->
+                <div class="lg:order-1 hero-image-container">
+                    <div class="hero-image-card bg-white rounded-2xl shadow-xl p-6 transition-transform duration-300">
+                        <img
+                            src="images/IA.jpg"
+                            alt="Professionnel IT au travail avec des solutions technologiques"
+                            class="w-full h-72 object-cover rounded-lg mb-6"
+                            loading="lazy"
+                        />
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Solutions IT complètes</h3>
+                            <p class="text-gray-600">
+                                De la conception à la maintenance, nous accompagnons votre transformation digitale avec expertise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texte après image -->
+                <div class="lg:order-2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Solutions IT <span class="text-blue-600">sur mesure</span> pour votre entreprise
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                        Chez LuqTech, nous combinons expertise technique et approche personnalisée pour répondre à tous vos besoins informatiques. Développement web, digitalisation, réseau et maintenance - nous avons la solution adaptée à votre activité.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center group">
+                            Demander un devis
+                            <i data-lucide="arrow-right" class="ml-2 group-hover:translate-x-1 transition-transform w-5 h-5"></i>
+                        </a>
+                        <a href="Services4.html" class="border-2 border-blue-600 text-blue-600 px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200 text-center flex items-center justify-center">
+                            Découvrir nos services
+                            <i data-lucide="chevron-down" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 md:gap-6">
+                        <div class="flex items-center space-x-2 bg-blue-50/50 px-3 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Intervention rapide</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-blue-50/50 px-3 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Devis gratuit</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-blue-50/50 px-3 py-2 rounded-lg">
+                            <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
+                            <span class="text-gray-700">Support 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold">NOS SERVICES</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Solutions complètes pour votre entreprise</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Nous offrons une gamme complète de services informatiques pour répondre à tous vos besoins technologiques.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="code" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Développement Web</h3>
+                        <p class="text-gray-600">
+                            Sites vitrines, e-commerce et applications web sur mesure, optimisés pour le référencement et les performances.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="smartphone" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Applications Mobile</h3>
+                        <p class="text-gray-600">
+                            Applications natives et hybrides pour iOS et Android, conçues pour offrir une expérience utilisateur exceptionnelle.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="cloud" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Digitalisation</h3>
+                        <p class="text-gray-600">
+                            Transformation digitale de vos processus métiers pour améliorer l'efficacité et réduire les coûts.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="server" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Réseau & Infrastructure</h3>
+                        <p class="text-gray-600">
+                            Conception, déploiement et gestion de votre infrastructure réseau pour une connectivité optimale.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="settings" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Maintenance PC</h3>
+                        <p class="text-gray-600">
+                            Maintenance préventive et corrective de vos équipements informatiques pour une productivité maximale.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:border-blue-200">
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="database" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Bases de données</h3>
+                        <p class="text-gray-600">
+                            Gestion et optimisation de vos bases de données pour des performances et une sécurité optimales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="Services4.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700">
+                    Voir tous nos services
+                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre infrastructure IT?</h2>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+                Contactez-nous dès aujourd'hui pour une consultation gratuite et découvrez comment nous pouvons vous aider.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center">
+                    Nous contacter
+                    <i data-lucide="mail" class="ml-2 w-5 h-5"></i>
+                </a>
+                <a href="tel:+33123456789" class="border-2 border-white text-white px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 flex items-center justify-center">
+                    <i data-lucide="phone" class="mr-2 w-5 h-5"></i>
+                    01 23 45 67 89
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialisation des icônes
+        lucide.createIcons();
+        
+        // Toggle mobile menu avec amélioration d'accessibilité
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuButton.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                menuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuButton.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+            lucide.createIcons();
+        });
+        
+        // Fermer le menu mobile lorsqu'un lien est cliqué
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                menuButton.setAttribute('aria-expanded', 'false');
+                lucide.createIcons();
+            });
+        });
+        
+        // Animation du header au scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Chargement différé des images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">L</span>
+                        </div>
+                        <span class="text-2xl font-bold">Luqtech</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Votre partenaire de confiance pour tous vos besoins informatiques. 
+                        Solutions sur mesure et expertise technique depuis 2016.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="Facebook"
+                        >
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="Twitter"
+                        >
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="LinkedIn"
+                        >
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="Instagram"
+                        >
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="Services4.html#web" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Développement Web
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html#mobile" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Applications Mobile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html#digital" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Digitalisation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html#reseau" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Réseau & Infrastructure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html#maintenance" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Maintenance PC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html#database" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Bases de données
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="aproN.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Services4.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Réalisations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact52.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                                <i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-blue-400"></i>
+                                Devis gratuit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400 mt-1"></i>
+                            <div>
+                                <span class="text-gray-300">01 23 45 67 89</span>
+                                <p class="text-sm text-gray-400">Lun-Ven: 9h-18h</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                            <a href="mailto:contact@luqtech.fr" class="text-gray-300 hover:text-white transition-colors">
+                                contact@luqtech.fr
+                            </a>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400 mt-1"></i>
+                            <div>
+                                <span class="text-gray-300">123 Rue de la Technologie</span>
+                                <span class="block text-gray-300">75015 Paris, France</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-semibold mb-2 flex items-center">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-blue-400 mr-2"></i>
+                            Urgence 24/7
+                        </h4>
+                        <a href="tel:+33612345678" class="text-blue-400 font-semibold hover:text-blue-300 transition-colors">
+                            06 12 34 56 78
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2024 Luqtech. Tous droits réservés. SIRET: 123 456 789 00045
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+                        <a href="legal.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Mentions légales
+                        </a>
+                        <a href="privacy.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Politique de confidentialité
+                        </a>
+                        <a href="cgu.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            CGV
+                        </a>
+                        <a href="sitemap.html" class="text-gray-300 hover:text-white text-sm transition-colors">
+                            Plan du site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
