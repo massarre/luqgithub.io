@@ -74,6 +74,20 @@
     header {
     background-color: white !important;
 }
+    /* Styles pour la section dépliante */
+    .experience-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .experience-details.open {
+        max-height: 500px;
+    }
+    .experience-item {
+        border-left: 2px solid #3b82f6;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+    }
     </style>
 </head>
 <body>
@@ -221,21 +235,20 @@
                             <i data-lucide="github" class="w-5 h-5"></i>
                         </a>
                         <a href="#" class="text-white hover:text-blue-400">
-                                                       <i data-lucide="mail" class="w-5 h-5"></i>
+                            <i data-lucide="mail" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-1">Massamba SARR</h3>
                 <p class="text-blue-600 font-medium mb-3">Administrateur Systèmes et Réseaux</p>
                 <div class="learn-more">
-                            <button onclick="toggleDetails('maintenance-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
-                                En savoir plus
-                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="maintenance-chevron"></i>
-                            </button>
-                        </div>
+                    <button onclick="toggleDetails('massamba-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                        En savoir plus
+                        <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="massamba-chevron"></i>
+                    </button>
+                </div>
 
-            </div>
-             <!-- Section des expériences professionnelles (cachée par défaut) -->
+                <!-- Section des expériences professionnelles (cachée par défaut) -->
                 <div id="massamba-details" class="experience-details mt-4">
                     <h4 class="font-semibold text-gray-800 mb-3">Expériences professionnelles</h4>
                     
@@ -257,6 +270,7 @@
                         <p class="text-sm text-gray-500 mt-1">Développement front-end, intégration d'API, responsive design.</p>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -445,7 +459,7 @@
             <div class="border-t border-gray-800 mt-12 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-300 text-sm">
-                        © 2025 Luqtech. Tous droits réservés.
+                        © 2024 Luqtech. Tous droits réservés.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
                         <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
@@ -466,7 +480,6 @@
     </footer>
     <script>
         lucide.createIcons();
-         lucide.createIcons();
     
     // Gestion du menu mobile
     const menuButton = document.getElementById('menuButton');
@@ -483,6 +496,21 @@
             mobileMenu.classList.add('hidden');
         });
     });
+    
+    // Fonction pour afficher/masquer les détails des expériences
+    function toggleDetails(id) {
+        const details = document.getElementById(id);
+        const chevron = document.getElementById(id.replace('details', 'chevron'));
+        
+        details.classList.toggle('open');
+        
+        // Animation de l'icône chevron
+        if (details.classList.contains('open')) {
+            chevron.style.transform = 'rotate(180deg)';
+        } else {
+            chevron.style.transform = 'rotate(0deg)';
+        }
+    }
     </script>
 </body>
 </html>

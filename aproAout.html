@@ -74,6 +74,20 @@
     header {
     background-color: white !important;
 }
+    /* Styles pour la section dépliante */
+    .experience-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .experience-details.open {
+        max-height: 500px;
+    }
+    .experience-item {
+        border-left: 2px solid #3b82f6;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+    }
     </style>
 </head>
 <body>
@@ -221,43 +235,118 @@
                             <i data-lucide="github" class="w-5 h-5"></i>
                         </a>
                         <a href="#" class="text-white hover:text-blue-400">
-                                                       <i data-lucide="mail" class="w-5 h-5"></i>
+                            <i data-lucide="mail" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-1">Massamba SARR</h3>
-                <p class="text-blue-600 font-medium mb-3">Administrateur Systèmes et Réseaux</p>
+                <p class="text-blue-600 font-medium mb-3">Etudiant en Systèmes & Réseaux et Cybersécurité</p>
                 <div class="learn-more">
-                            <button onclick="toggleDetails('maintenance-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
-                                En savoir plus
-                                <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="maintenance-chevron"></i>
-                            </button>
-                        </div>
+                    <button onclick="toggleDetails('massamba-details')" class="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
+                        En savoir plus
+                        <i data-lucide="chevron-down" class="ml-1 w-4 h-4" id="massamba-chevron"></i>
+                    </button>
+                </div>
 
-            </div>
-             <!-- Section des expériences professionnelles (cachée par défaut) -->
+                <!-- Section des expériences professionnelles (cachée par défaut) -->
                 <div id="massamba-details" class="experience-details mt-4">
                     <h4 class="font-semibold text-gray-800 mb-3">Expériences professionnelles</h4>
                     
                     <div class="experience-item">
-                        <h5 class="font-medium text-gray-700">Administrateur Systèmes et Réseaux</h5>
-                        <p class="text-sm text-gray-600">Entreprise ABC · 2022 - Présent</p>
-                        <p class="text-sm text-gray-500 mt-1">Gestion de l'infrastructure réseau, virtualisation, sécurité informatique.</p>
+                        <h5 class="font-medium text-gray-700">Technicien support informatique (CDD)</h5>
+                        <p class="text-sm text-gray-600">Cofigeo · Juin 2025 - Juillet 2025</p>
+                
                     </div>
                     
                     <div class="experience-item">
-                        <h5 class="font-medium text-gray-700">Technicien Support Informatique</h5>
-                        <p class="text-sm text-gray-600">Société XYZ · 2020 - 2022</p>
-                        <p class="text-sm text-gray-500 mt-1">Support aux utilisateurs, maintenance hardware et software, déploiement de postes.</p>
+                        <h5 class="font-medium text-gray-700">Technicien Supérieur Systèmes et Réseaux (Stage)</h5>
+                        <p class="text-sm text-gray-600">Laboratoire Science et Nature · Novembre 2024 - Décembre 2024</p>
+                    
                     </div>
                     
                     <div class="experience-item">
-                        <h5 class="font-medium text-gray-700">Développeur Web Junior</h5>
-                        <p class="text-sm text-gray-600">Startup Tech · 2019 - 2020</p>
-                        <p class="text-sm text-gray-500 mt-1">Développement front-end, intégration d'API, responsive design.</p>
+                        <h5 class="font-medium text-gray-700">Technicien Supérieur Systèmes et Réseaux (Stage)</h5>
+                        <p class="text-sm text-gray-600">Laboratoire Science et Nature · Mai 2024 - Juillet 2024 </p>
+                    </div>
+                
+        <!-- Expériences non professionnelles -->
+                    <h4 class="section-title">Expériences non professionnelles</h4>
+                    
+                     <div class="experience-item">
+                        <h5 class="font-medium text-gray-700">Employé polyvalent</h5>
+                        <p class="text-sm text-gray-600">La Taverne de L'Escuelle·  Aout 2025</p>
+                        <p class="text-sm text-gray-500 mt-1">Barmain ; Commis cuisine ; Plonge ; Barmaid.</p>
+                    </div>
+                    
+                     <div class="experience-item">
+                        <h5 class="font-medium text-gray-700">Serveur</h5>
+                        <p class="text-sm text-gray-600">La Taverne de L'Escuelle· Juillet - Aout 2023</p>
+                        <p class="text-sm text-gray-500 mt-1">Serveur ; Barmaid.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h5 class="font-medium text-gray-700">Employé polyvalent</h5>
+                        <p class="text-sm text-gray-600">La Taverne de L'Escuelle· Avril - Aout 2022</p>
+                        <p class="text-sm text-gray-500 mt-1">Serveur ; valet de chambre.</p>
+                    </div>
+
+                    <!-- Compétences -->
+                    <h4 class="section-title">Compétences</h4>
+                    
+                    <div class="mb-4">
+                        <div>
+                            <span class="skill-badge">Windows Server</span>
+                            <span class="skill-badge">Linux/Unix</span>
+                            <span class="skill-badge">Virtualisation</span>
+                            <span class="skill-badge">Active Directory</span>
+                             <span class="skill-badge">TCP/IP</span>
+                            <span class="skill-badge">VPN</span>
+                            <span class="skill-badge">Sécurité réseau</span>
+                            <span class="skill-badge">Cisco</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">Microsoft 365</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+            
+                    <!-- Qualités personnelles -->
+                    <h4 class="section-title">Qualités personnelles</h4>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="users" class="w-4 h-4 quality-icon"></i>
+                        <span>Esprit d'équipe et collaboration</span>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="lightbulb" class="w-4 h-4 quality-icon"></i>
+                        <span>Créativité et innovation</span>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="target" class="w-4 h-4 quality-icon"></i>
+                        <span>Résolution de problèmes complexes</span>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="clock" class="w-4 h-4 quality-icon"></i>
+                        <span>Gestion du temps et respect des délais</span>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="book-open" class="w-4 h-4 quality-icon"></i>
+                        <span>Curiosité et apprentissage continu</span>
+                    </div>
+                    
+                    <div class="quality-item">
+                        <i data-lucide="message-circle" class="w-4 h-4 quality-icon"></i>
+                        <span>Communication claire et adaptée</span>
                     </div>
                 </div>
+            </div>
         </div>
+    </section>
     </section>
 
     <!--mass-->
@@ -445,7 +534,7 @@
             <div class="border-t border-gray-800 mt-12 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-300 text-sm">
-                        © 2025 Luqtech. Tous droits réservés.
+                        © 2024 Luqtech. Tous droits réservés.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
                         <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">
@@ -466,7 +555,6 @@
     </footer>
     <script>
         lucide.createIcons();
-         lucide.createIcons();
     
     // Gestion du menu mobile
     const menuButton = document.getElementById('menuButton');
@@ -483,6 +571,21 @@
             mobileMenu.classList.add('hidden');
         });
     });
+    
+    // Fonction pour afficher/masquer les détails des expériences
+    function toggleDetails(id) {
+        const details = document.getElementById(id);
+        const chevron = document.getElementById(id.replace('details', 'chevron'));
+        
+        details.classList.toggle('open');
+        
+        // Animation de l'icône chevron
+        if (details.classList.contains('open')) {
+            chevron.style.transform = 'rotate(180deg)';
+        } else {
+            chevron.style.transform = 'rotate(0deg)';
+        }
+    }
     </script>
 </body>
 </html>
